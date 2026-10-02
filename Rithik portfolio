@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rithik Kumar | Senior Accounts & Taxation Professional</title>
+    <style>
+        :root {
+            --primary-color: #0f172a;
+            --secondary-color: #1e293b;
+            --accent-color: #2563eb;
+            --text-main: #334155;
+            --text-light: #64748b;
+            --bg-light: #f8fafc;
+            --white: #ffffff;
+            --card-border: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* Header / Navbar */
+        header {
+            background-color: var(--primary-color);
+            color: var(--white);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.25rem 1.5rem;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--white);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: var(--white);
+            padding: 4rem 1.5rem;
+            text-align: center;
+        }
+
+        .hero-container {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .profile-img {
+            width: 170px;
+            height: 170px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #3b82f6;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .hero p.tagline {
+            font-size: 1.15rem;
+            color: #94a3b8;
+            max-width: 650px;
+        }
+
+        .badges {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 0.5rem;
+        }
+
+        .badge {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.4rem 0.9rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            color: #e2e8f0;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        /* Layout Structure */
+        .main-container {
+            max-width: 1100px;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
+        }
+
+        section {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            border: 1px solid var(--card-border);
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+        }
+
+        h2.section-title {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        h2.section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        /* Grid Cards */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: #f8fafc;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--card-border);
+        }
+
+        .card h3 {
+            color: var(--secondary-color);
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        ul.feature-list {
+            list-style-type: none;
+        }
+
+        ul.feature-list li {
+            position: relative;
+            padding-left: 1.25rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        ul.feature-list li::before {
+            content: "•";
+            color: var(--accent-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Timeline Items */
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .timeline-item {
+            border-left: 3px solid var(--accent-color);
+            padding-left: 1.25rem;
+        }
+
+        .timeline-item h3 {
+            font-size: 1.15rem;
+            color: var(--primary-color);
+        }
+
+        .timeline-item .meta {
+            font-size: 0.875rem;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        /* Client Tag Badges */
+        .client-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.75rem;
+        }
+
+        .client-tag {
+            background: #e2e8f0;
+            color: var(--secondary-color);
+            font-size: 0.8rem;
+            padding: 0.25rem 0.6rem;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: #94a3b8;
+            text-align: center;
+            padding: 2rem 1.5rem;
+            font-size: 0.875rem;
+        }
+
+        @media (max-width: 640px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 1.875rem; }
+            section { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="#" class="logo">Rithik Kumar</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills & Expertise</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Qualifications</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-container">
+            <!-- Save your image as 78245.jpg in your GitHub repository root -->
+            <img src="78245.jpg" alt="Rithik Kumar" class="profile-img">
+            <h1>Rithik Kumar</h1>
+            <p class="tagline">Senior Accounts Executive & Tax Compliance Specialist with hands-on expertise in GST, TDS, Tally, and US Accounting & Bookkeeping.</p>
+            <div class="badges">
+                <span class="badge">📍 Delhi, India</span>
+                <span class="badge">🎓 B.Com | Univ. of Delhi</span>
+                <span class="badge">📜 Diploma in E-Accounting</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="main-container">
+
+        <!-- About Section -->
+        <section id="about">
+            <h2 class="section-title">About Me</h2>
+            <p>I am a detail-oriented Senior Accounts Executive with nearly 3 years of corporate finance and taxation experience. I specialize in managing end-to-end accounting operations, ensuring compliance with Indian tax regulations (GST & TDS), and utilizing Tally for financial management. In addition to Indian corporate taxation, I hold specialized training in US Accounting and Bookkeeping standards.</p>
+        </section>
+
+        <!-- Core Competencies -->
+        <section id="skills">
+            <h2 class="section-title">Core Competencies</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h3>Tax Management & Compliance</h3>
+                    <ul class="feature-list">
+                        <li><strong>GST Operations:</strong> Registration, GSTR-1, GSTR-3B filings, and GSTR-2A/2B reconciliations.</li>
+                        <li><strong>TDS Compliance:</strong> Deductions, monthly payments, quarterly filings, and Form 16/16A issuance.</li>
+                        <li><strong>Corporate Tax:</strong> Tax preparation, audit assistance, and compliance management.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Financial & Technical Software</h3>
+                    <ul class="feature-list">
+                        <li><strong>ERP Software:</strong> Tally ERP 9, Tally Prime, and E-Accounting tools.</li>
+                        <li><strong>US Bookkeeping:</strong> US GAAP rules, Chart of Accounts, and account reconciliations.</li>
+                        <li><strong>Financial Tools:</strong> Advanced MS Excel (VLOOKUP, Pivot Tables, Statements).</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience & Clients -->
+        <section id="experience">
+            <h2 class="section-title">Experience & Client Accounts</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>Senior Accounts Executive</h3>
+                    <div class="meta">Corporate Finance & Tax Compliance</div>
+                    <p>Responsible for managing corporate ledger accounts, performing bank reconciliations, filing monthly/quarterly tax returns, and auditing account statements.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Accounts & GST Management</h3>
+                    <div class="meta">Client Portfolios Handled</div>
+                    <p>Managed GST filings, invoices, accounts, and registrations across business accounts:</p>
+                    <div class="client-tags">
+                        <span class="client-tag">Himalaya Trading</span>
+                        <span class="client-tag">Ayushman Herbal</span>
+                        <span class="client-tag">Baba Industries</span>
+                        <span class="client-tag">Proxcelur</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education & Certifications -->
+        <section id="education">
+            <h2 class="section-title">Education & Training</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h3>Bachelor of Commerce (B.Com)</h3>
+                    <p class="meta">University of Delhi</p>
+                    <p>In-depth education covering financial accounting, corporate law, auditing, and economics.</p>
+                </div>
+                <div class="card">
+                    <h3>Diploma in E-Accounting</h3>
+                    <p class="meta">Professional Qualification</p>
+                    <p>Comprehensive training in practical computerized accounting, GST filing, Tally, and TDS.</p>
+                </div>
+            </div>
+            <div class="card" style="margin-top: 1.5rem;">
+                <h3>US Accounting & Bookkeeping Bootcamp</h3>
+                <p class="meta">Skill Arbitrage Professional Program</p>
+                <p>Completed intensive multi-day training focused on international bookkeeping, US GAAP, and global financial practices.</p>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; Rithik Kumar. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
