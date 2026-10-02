@@ -1,30 +1,24 @@
-<!-- If profile.jpg is in the same folder as index.html -->
-<img src="profile.jpg" alt="Rithik Kumar - Accounts & Taxation Professional" class="profile-photo">
-
-<!-- OR if profile.jpg is saved inside an 'images' folder -->
-<img src="images/profile.jpg" alt="Rithik Kumar - Accounts & Taxation Professional" class="profile-photo">
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rithik Kumar | Accounts & Taxation Professional</title>
+    <title>Rithik Kumar | Senior Accounts & Taxation Professional</title>
     <style>
         :root {
-            --primary: #0056b3;
-            --primary-dark: #003d80;
-            --secondary: #e6f0fa;
-            --accent: #00a8ff;
-            --text-dark: #1e293b;
-            --text-muted: #64748b;
-            --bg-light: #f8fafc;
+            --primary-color: #1a365d;
+            --secondary-color: #2b6cb0;
+            --accent-color: #d69e2e;
+            --bg-light: #f7fafc;
+            --text-dark: #2d3748;
+            --text-light: #718096;
             --white: #ffffff;
         }
 
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
@@ -34,60 +28,63 @@
             line-height: 1.6;
         }
 
-        /* Navigation */
-        nav {
-            background: var(--white);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        /* Header & Navigation */
+        header {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 20px 0;
             position: sticky;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
-        .nav-container {
-            max-width: 1200px;
+        nav {
+            max-width: 1100px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 2rem;
+            padding: 0 20px;
         }
 
-        .logo {
+        nav h1 {
             font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary);
+            letter-spacing: 1px;
         }
 
-        .nav-links {
+        nav ul {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 20px;
         }
 
-        .nav-links a {
+        nav a {
+            color: var(--white);
             text-decoration: none;
-            color: var(--text-dark);
             font-weight: 500;
             transition: color 0.3s;
         }
 
-        .nav-links a:hover {
-            color: var(--primary);
+        nav a:hover {
+            color: var(--accent-color);
         }
 
-        /* Hero / Header Section */
+        /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, var(--secondary) 0%, #ffffff 100%);
-            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #1a365d 0%, #2b6cb0 100%);
+            color: var(--white);
+            padding: 80px 20px;
             text-align: center;
         }
 
         .hero-container {
-            max-width: 900px;
+            max-width: 1100px;
             margin: 0 auto;
             display: flex;
             flex-direction: column;
             align-items: center;
+            gap: 20px;
         }
 
         .profile-img {
@@ -95,170 +92,233 @@
             height: 180px;
             border-radius: 50%;
             object-fit: cover;
-            border: 4px solid var(--primary);
-            box-shadow: 0 8px 20px rgba(0, 86, 179, 0.2);
-            margin-bottom: 1.5rem;
+            border: 4px solid var(--white);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
 
-        .hero h1 {
+        .hero h2 {
             font-size: 2.5rem;
-            color: var(--primary-dark);
-            margin-bottom: 0.5rem;
+            margin-bottom: 5px;
         }
 
-        .hero p.tagline {
-            font-size: 1.25rem;
-            color: var(--text-muted);
-            margin-bottom: 1.5rem;
-            font-weight: 500;
+        .hero p.subtitle {
+            font-size: 1.2rem;
+            color: #e2e8f0;
+            margin-bottom: 15px;
         }
 
-        .hero-buttons {
+        .contact-bar {
             display: flex;
-            gap: 1rem;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+            font-size: 0.95rem;
         }
 
-        .btn {
-            padding: 0.75rem 1.5rem;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: background 0.3s, transform 0.2s;
-        }
-
-        .btn-primary {
-            background-color: var(--primary);
-            color: var(--white);
-        }
-
-        .btn-primary:hover {
-            background-color: var(--primary-dark);
-            transform: translateY(-2px);
-        }
-
-        .btn-secondary {
-            border: 2px solid var(--primary);
-            color: var(--primary);
-        }
-
-        .btn-secondary:hover {
-            background-color: var(--secondary);
-            transform: translateY(-2px);
-        }
-
-        /* Main Content Sections */
-        .section {
+        /* Container Sections */
+        .container {
             max-width: 1100px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
+            margin: 40px auto;
+            padding: 0 20px;
         }
 
-        .section-title {
-            text-align: center;
-            font-size: 2rem;
-            color: var(--primary-dark);
-            margin-bottom: 2.5rem;
+        section {
+            background: var(--white);
+            padding: 35px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        h3.section-title {
+            color: var(--primary-color);
+            font-size: 1.6rem;
+            border-bottom: 3px solid var(--accent-color);
+            display: inline-block;
+            padding-bottom: 5px;
+            margin-bottom: 25px;
+        }
+
+        /* Grid Layouts */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .skills-list {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+
+        .skills-list li {
+            margin-bottom: 8px;
+        }
+
+        /* Experience Timeline */
+        .timeline-item {
+            border-left: 3px solid var(--secondary-color);
+            padding-left: 20px;
+            margin-bottom: 25px;
             position: relative;
         }
 
-        .section-title::after {
+        .timeline-item::before {
             content: '';
-            width: 60px;
-            height: 3px;
-            background-color: var(--primary);
-            display: block;
-            margin: 0.5rem auto 0;
-            border-radius: 2px;
+            width: 12px;
+            height: 12px;
+            background: var(--secondary-color);
+            position: absolute;
+            left: -7px;
+            top: 5px;
+            border-radius: 50%;
         }
 
-        /* Services Grid */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
+        .timeline-item h4 {
+            font-size: 1.2rem;
+            color: var(--primary-color);
         }
 
-        .card {
-            background: var(--white);
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-            border-top: 4px solid var(--primary);
-            transition: transform 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-50px);
-        }
-
-        .card h3 {
-            color: var(--primary);
-            margin-bottom: 0.75rem;
+        .timeline-item .role-meta {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 10px;
         }
 
         /* Footer */
         footer {
-            background-color: var(--primary-dark);
+            background-color: var(--primary-color);
             color: var(--white);
             text-align: center;
-            padding: 2rem;
-            margin-top: 3rem;
+            padding: 20px;
+            margin-top: 40px;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none; /* Mobile view simplification */
+            }
+            .hero h2 {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- Navigation -->
-    <nav>
-        <div class="nav-container">
-            <div class="logo">Rithik Kumar</div>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <header class="hero">
-        <div class="hero-container">
-            <!-- Profile Picture -->
-            <img src="78245.jpg" alt="Rithik Kumar" class="profile-img">
+    <!-- Header / Nav -->
+    <header>
+        <nav>
             <h1>Rithik Kumar</h1>
-            <p class="tagline">Accounts & Taxation Professional</p>
-            <div class="hero-buttons">
-                <a href="#contact" class="btn btn-primary">Contact Me</a>
-                <a href="#" class="btn btn-secondary">Download Resume</a>
-            </div>
-        </div>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Competencies</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education & Certifications</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <!-- Services Section -->
-    <section id="services" class="section">
-        <h2 class="section-title">Core Expertise</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>GST Compliance</h3>
-                <p>Expertise in managing GST registrations, filing monthly/annual returns, and handling reconciliation.</p>
-            </div>
-            <div class="card">
-                <h3>Income Tax Return Filing</h3>
-                <p>Preparation and filing of Income Tax Returns (ITR) for individuals and small businesses.</p>
-            </div>
-            <div class="card">
-                <h3>TDS & TCS Management</h3>
-                <p>Ensuring full tax compliance, calculation, and timely filing of TDS returns.</p>
-            </div>
-            <div class="card">
-                <h3>Bookkeeping & Accounts</h3>
-                <p>Maintaining financial ledgers, corporate finance compliance, and audit preparation using Tally.</p>
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="hero-container">
+            <!-- Save your image as profile.jpg in your GitHub repo root -->
+            <img src="profile.jpg" alt="Rithik Kumar" class="profile-img">
+            <div>
+                <h2>Rithik Kumar</h2>
+                <p class="subtitle">Senior Accounts & Taxation Professional | Corporate Finance & Compliance Specialist</p>
+                <div class="contact-bar">
+                    <span>📍 New Delhi, India</span>
+                    <span>🎓 B.Com | University of Delhi</span>
+                    <span>💼 Senior Accounts Executive</span>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Footer -->
+    <div class="container">
+
+        <!-- Executive Summary -->
+        <section id="about">
+            <h3 class="section-title">Executive Summary</h3>
+            <p>Result-driven and highly analytical Senior Accounts Executive with nearly three years of progressive experience in corporate accounting, direct/indirect tax compliance, financial forecasting, and auditing processes. Proven track record in managing complete accounting lifecycles, Goods & Services Tax (GST) filing, Tax Deducted at Source (TDS) compliance, and Tally ERP/Prime operations.</p>
+            <br>
+            <p>Adept at streamlined bookkeeping, invoice reconciliation, ledger management, and regulatory compliance for corporate entities. Expanded expertise into US Accounting and Bookkeeping standards, offering global financial compliance solutions.</p>
+        </section>
+
+        <!-- Core Competencies -->
+        <section id="skills">
+            <h3 class="section-title">Core Competencies</h3>
+            <div class="grid-2">
+                <div>
+                    <h4 style="color: var(--secondary-color); margin-bottom: 10px;">Taxation & Compliance</h4>
+                    <ul class="skills-list">
+                        <li><strong>GST Management:</strong> Registrations, Monthly/Quarterly Filings (GSTR-1, GSTR-3B), Reconciliation (GSTR-2A/2B).</li>
+                        <li><strong>TDS & Income Tax:</strong> Calculation, monthly deposit, return filings (24Q, 26Q), Form 16/16A generation.</li>
+                        <li><strong>Corporate Tax Compliance:</strong> Financial statement preparation, audit assistance, and statutory filings.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: var(--secondary-color); margin-bottom: 10px;">Accounting & Software Skills</h4>
+                    <ul class="skills-list">
+                        <li><strong>Software:</strong> Tally ERP 9, TallyPrime, E-Accounting Tools, MS Excel (VLOOKUP, Pivot Tables, Advanced Formulas).</li>
+                        <li><strong>US Bookkeeping:</strong> US GAAP principles, Chart of Accounts management, Bank & Credit Card reconciliations.</li>
+                        <li><strong>Financial Management:</strong> General Ledger maintenance, Accounts Payable (AP) & Receivable (AR), Financial Reporting.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Professional Experience -->
+        <section id="experience">
+            <h3 class="section-title">Professional Experience</h3>
+
+            <div class="timeline-item">
+                <h4>Senior Accounts Executive</h4>
+                <div class="role-meta">Full-Time | Financial & Taxation Services</div>
+                <ul>
+                    <li>Managed end-to-end accounting operations, financial reporting, and trial balance finalization for corporate clients.</li>
+                    <li>Executed complete GST compliance, including filing GST returns, claiming ITC (Input Tax Credit), and resolving portal notices.</li>
+                    <li>Oversaw corporate TDS payments, generated quarterly returns, and ensured zero compliance defaults.</li>
+                    <li>Maintained client accounts across multiple industries, ensuring precise bank reconciliations and ledger accuracy.</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <h4>Accounts & Taxation Consultant / Freelance Accountant</h4>
+                <div class="role-meta">Client Accounts Management</div>
+                <ul>
+                    <li>Handled corporate accounting, GST invoicing, annual registrations, and compliance for various commercial entities including Himalaya Trading, Ayushman Herbal, Baba Industries, and Proxcelur.</li>
+                    <li>Implemented streamlined E-Accounting systems for small and medium businesses to reduce manual bookkeeping errors.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Education & Certifications -->
+        <section id="education">
+            <h3 class="section-title">Education & Qualifications</h3>
+            <div class="grid-2">
+                <div>
+                    <h4 style="color: var(--primary-color);">Bachelor of Commerce (B.Com)</h4>
+                    <p style="color: var(--text-light);">University of Delhi</p>
+                    <p>Focused on financial accounting, corporate law, auditing, and business management.</p>
+                </div>
+                <div>
+                    <h4 style="color: var(--primary-color);">Diploma in E-Accounting</h4>
+                    <p style="color: var(--text-light);">Professional Qualification</p>
+                    <p>Specialized in computerized accounting, practical taxation, Tally Prime, and GST portal workflows.</p>
+                </div>
+            </div>
+
+            <h4 style="color: var(--primary-color); margin-top: 25px; margin-bottom: 10px;">Professional Training & Bootcamps</h4>
+            <ul>
+                <li><strong>US Accounting & Bookkeeping Bootcamp:</strong> Intensive professional training through Skill Arbitrage, covering US GAAP, QuickBooks/Xero workflows, and international bookkeeping standards.</li>
+            </ul>
+        </section>
+
+    </div>
+
     <footer>
         <p>&copy; Rithik Kumar. All rights reserved.</p>
     </footer>
